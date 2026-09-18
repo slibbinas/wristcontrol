@@ -392,6 +392,89 @@ table.modes { width: 100%; border-collapse: collapse; font-size: 9.3pt; }
 <section class="page ">
   <header class="run"><span class="rl"><img src="img/ikona.png" alt="">Wrist Control for Vallox</span><span>5</span></header>
   
+  <div class="kicker">Optimized · automation</div>
+  <h2>Optimized adjusts itself while you live.</h2>
+  <p class="intro">While <b>Optimized</b> is on, the app checks three rules after every reading. It never drives
+  the fans directly: two rules only change the <b>fan at rest</b> (the Away speed Automatic starts from), and the
+  unit's own CO2 control keeps working between readings. The third rule only offers a Boost. The numbers were
+  checked against a year of real history (2025-09-15 - 2026-09-14, 47,789 records every 10 min).</p>
+  <table class="modes">
+    <tr><th>Rule</th><th>When</th><th>What happens</th><th>Ends when</th><th>In a year of history</th></tr>
+    <tr><td><b>Nobody home</b></td><td>CO2 at most 460&nbsp;ppm for 90 min without a break, no humidity jumps</td>
+      <td>Fan at rest 45 → <b>30&nbsp;%</b></td><td>CO2 rises 80&nbsp;ppm above its lowest value, or humidity jumps</td>
+      <td>89 times, about 1.7 a week, median 1.7 h</td></tr>
+    <tr><td><b>Dry air</b></td><td>Below +5 °C outdoors, indoor humidity under 38&nbsp;% in two readings in a row, CO2 at least 100&nbsp;ppm under the limit</td>
+      <td>Fan at rest → <b>35&nbsp;%</b></td><td>Humidity rises above 43&nbsp;%</td>
+      <td>6 times in a winter, about 67 h in total</td></tr>
+    <tr><td><b>Boost offer</b></td><td>Humidity up 8&nbsp;% within about 30 min</td>
+      <td>Notification "Shower?" or "Cooking?" - tap to Boost</td><td>At most once an hour</td>
+      <td>About 220 a year, 4 a week</td></tr>
+  </table>
+  <div class="split">
+    <div>
+      <h3>Why the fan at rest, not the mode</h3>
+      <p>"Nobody home" does not switch to Away. It only lowers the speed Automatic starts from. When people come
+      back, nobody has to wait for the watch: the unit sees CO2 rising and adds air by itself, and at the next
+      reading the app restores the Optimized value. The same holds for "Dry air".</p>
+      <h3>Shower or cooking</h3>
+      <p>Told apart roughly: if the extract air gets at least 1 °C warmer together with the humidity, it says
+      "Cooking?", otherwise "Shower?". Hence the question mark.</p>
+    </div>
+    <div>
+      <h3>Boost and Custom</h3>
+      <p>While a temporary mode runs, the automation changes nothing and waits until the unit is back in Optimized.</p>
+      <h3>Week schedule</h3>
+      <p>If the unit's week schedule is on, it would switch the mode at set times and quietly end Optimized. The
+      first time you pick Optimized, the app asks once: pause the schedule while Optimized is on? With Pause the
+      schedule is switched off - its events are kept - and switched back on when you choose another lasting mode.
+      The app restores only what it paused itself. Under Optimized a line says "Schedule paused" or "Schedule on".</p>
+    </div>
+  </div>
+
+</section>
+<section class="page ">
+  <header class="run"><span class="rl"><img src="img/ikona.png" alt="">Wrist Control for Vallox</span><span>6</span></header>
+  
+  <div class="kicker">Optimized · how often, and what never changes</div>
+  <h2>The watch looks when something happens.</h2>
+  <table class="modes">
+    <tr><th>Data refresh: Auto (default)</th><th>Reading</th></tr>
+    <tr><td>Hours when your home is usually busy</td><td>every 20 min</td></tr>
+    <tr><td>Ordinary hours</td><td>every 30 min</td></tr>
+    <tr><td>Night, 1-5 h</td><td>every 60 min</td></tr>
+    <tr><td>A change was just seen (humidity +3&nbsp;% or CO2 +100&nbsp;ppm since the last reading)</td><td>every 15 min for an hour</td></tr>
+  </table>
+  <p class="intro" style="margin-top:4mm">The busy hours are learned for each unit from its own history (when Optimize or Statistics
+  downloads it) and from the changes the watch sees. Until there is enough data: 6-8 and 19-22 h. A fixed 20 min,
+  30 min or 1 h, or Only in app can be chosen in Settings → Data refresh. With Only in app nothing runs in the
+  background: no notifications and no automation. At night Android may group the readings.</p>
+  <div class="split">
+    <div>
+      <h3>What the app changes</h3>
+      <p>On its own only four things: the <b>mode</b>, the <b>Away speed</b>, the <b>CO2 limit</b> and the
+      <b>week schedule switch</b>. When you ask, it also writes the filter change date and corrects the unit's clock.</p>
+      <h3>What it never changes</h3>
+      <p>The Home and Boost speeds, humidity control, the heater, bypass and Custom settings. Optimize stays within
+      a safe range (fan at rest 20-70&nbsp;%, CO2 limit 500-1000&nbsp;ppm), and Undo restores the previous values.</p>
+      <h3>Without a connection</h3>
+      <p>The app changes nothing, and the unit keeps running with the last settings.</p>
+    </div>
+    <div>
+      <h3>Planned</h3>
+      <p><b>Per-unit thresholds:</b> the "empty home" CO2 level and the humidity jump worked out for each unit from its
+      own history - today they are one apartment's numbers. <b>Summer cooling:</b> more air when the night is cooler
+      outside than inside, less on a hot day. <b>Weather forecast</b> - once there is summer experience.</p>
+      <h3>The full paper</h3>
+      <p>The same logic with the Vallox control curve, the mode recipes and Optimize step by step - for installers:</p>
+      <p><a href="https://slibbinas.github.io/wristcontrol/guide/wrist-control-automation.pdf">How the automation works (PDF, English)</a><br>
+      <a href="https://slibbinas.github.io/wristcontrol/guide/wrist-control-automatika.pdf">Kaip veikia automatika (PDF, lietuviškai)</a></p>
+    </div>
+  </div>
+
+</section>
+<section class="page ">
+  <header class="run"><span class="rl"><img src="img/ikona.png" alt="">Wrist Control for Vallox</span><span>7</span></header>
+  
   <div class="kicker">Optimize</div>
   <h2>Settings made for your home, not for an average one.</h2>
   <p class="intro">Every home produces CO2 differently: how many people, how big the rooms, when you sleep and
@@ -417,7 +500,7 @@ table.modes { width: 100%; border-collapse: collapse; font-size: 9.3pt; }
 
 </section>
 <section class="page ">
-  <header class="run"><span class="rl"><img src="img/ikona.png" alt="">Wrist Control for Vallox</span><span>6</span></header>
+  <header class="run"><span class="rl"><img src="img/ikona.png" alt="">Wrist Control for Vallox</span><span>8</span></header>
   
   <div class="kicker">Statistics</div>
   <h2>Your week: was the air good, and what did it cost?</h2>
@@ -459,7 +542,7 @@ table.modes { width: 100%; border-collapse: collapse; font-size: 9.3pt; }
 
 </section>
 <section class="page ">
-  <header class="run"><span class="rl"><img src="img/ikona.png" alt="">Wrist Control for Vallox</span><span>7</span></header>
+  <header class="run"><span class="rl"><img src="img/ikona.png" alt="">Wrist Control for Vallox</span><span>9</span></header>
   
   <div class="kicker">Appendix</div>
   <h2>Getting around</h2>
@@ -544,7 +627,7 @@ table.modes { width: 100%; border-collapse: collapse; font-size: 9.3pt; }
 
 </section>
 <section class="page ">
-  <header class="run"><span class="rl"><img src="img/ikona.png" alt="">Wrist Control for Vallox</span><span>8</span></header>
+  <header class="run"><span class="rl"><img src="img/ikona.png" alt="">Wrist Control for Vallox</span><span>10</span></header>
   
   <div class="kicker">Appendix</div>
   <h2>Settings</h2>
@@ -573,7 +656,7 @@ table.modes { width: 100%; border-collapse: collapse; font-size: 9.3pt; }
 
 </section>
 <section class="page ">
-  <header class="run"><span class="rl"><img src="img/ikona.png" alt="">Wrist Control for Vallox</span><span>9</span></header>
+  <header class="run"><span class="rl"><img src="img/ikona.png" alt="">Wrist Control for Vallox</span><span>11</span></header>
   
   <div class="kicker">Appendix</div>
   <h2>On your wrist without opening the app</h2>
