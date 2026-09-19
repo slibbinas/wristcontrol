@@ -101,6 +101,16 @@ table.modes { width: 100%; border-collapse: collapse; font-size: 9.3pt; }
 .chart .ax { font-size: 9px; fill: #8A93A6; }
 .chart .note { font-size: 9.5px; fill: #3A4458; font-weight: 600; }
 .cap { font-size: 7.8pt; color: #7A8397; margin-top: 1mm; }
+/* rezimu puslapis - pilniausias: lentele ir juosta glaudziau, kad tilptu ir LT */
+.tankus h2 { margin-bottom: 3mm; }
+.tankus .intro { margin-bottom: 4mm; }
+.tankus .tap { margin-bottom: 3mm; }
+.tankus .tap-r { padding: 2mm 0; }
+.tankus table.modes { font-size: 8.8pt; }
+.tankus .modes td { padding: 1.4mm 3mm; }
+.tankus .split { margin-top: 2mm; }
+.tankus .split h3 { margin-top: 3mm; }
+.tankus .fig { margin-top: 2mm; }
 
 /* optimize / statistika */
 .steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 5mm; text-align: center; }
@@ -336,12 +346,12 @@ table.modes { width: 100%; border-collapse: collapse; font-size: 9.3pt; }
   <div class="facts">
     <div><h4>Home and away</h4><p>At home the watch talks to the unit over Wi-Fi. Away, it uses the Vallox cloud and your MyVallox account.</p></div>
     <div><h4>Alerts that don't nag</h4><p>One notice when indoor air leaves the comfort range, with the same scale as in the app. One when filters are due. No repeats.</p></div>
-    <div><h4>Your pages</h4><p>Hold a page to reorder or hide pages. Keep only what you look at.</p></div>
+    <div><h4>Your pages</h4><p>Hold a page to reorder or hide pages. Keep only what you look at. Ventilation and Settings always stay.</p></div>
     <div><h4>Sign in from the phone</h4><p>No typing on the watch: the phone app sends your MyVallox login to the watch. English, Suomi, Lietuvių, Polski.</p></div>
   </div>
 
 </section>
-<section class="page ">
+<section class="page tankus">
   <header class="run"><span class="rl"><img src="img/ikona.png" alt="">Wrist Control for Vallox</span><span>4</span></header>
   
   <div class="kicker">Smart modes · the heart of the app</div>
@@ -363,7 +373,7 @@ table.modes { width: 100%; border-collapse: collapse; font-size: 9.3pt; }
     <tr><td><b>At home</b></td><td>People are home and you want a steady fan</td><td>CO2 limit 800&nbsp;ppm</td><td>Until you switch</td></tr>
     <tr><td><b>Away</b></td><td>The house is empty</td><td>Fan 30&nbsp;%, CO2 limit 800&nbsp;ppm</td><td>Until you switch</td></tr>
     <tr class="hl"><td><b>Optimized</b><br><span>first in the list</span></td><td>You want the fan to follow the air</td><td>Your Optimize settings<br><span>(fan at rest 45&nbsp;%, limit 600&nbsp;ppm before you optimize). Slows to 30&nbsp;% when nobody is home, to 35&nbsp;% when winter air is dry; offers a Boost when humidity jumps</span></td><td>Until you switch</td></tr>
-    <tr><td><b>Boost</b></td><td>Cooking, sauna, guests</td><td>Nothing</td><td>Its timer, then back to the previous mode</td></tr>
+    <tr><td><b>Boost</b></td><td>Cooking, sauna, guests</td><td>Nothing</td><td>60 min, then back to the previous mode</td></tr>
     <tr><td><b>Custom</b></td><td>Fireplace or special use</td><td>Nothing</td><td>Its timer, then back</td></tr>
     <tr><td><b>Auto</b><br><span>last in the list</span></td><td>You want the Vallox factory behaviour</td><td>Factory values: fan 30&nbsp;%, CO2 limit 800&nbsp;ppm</td><td>Until you switch</td></tr>
   </table>
@@ -636,14 +646,14 @@ table.modes { width: 100%; border-collapse: collapse; font-size: 9.3pt; }
     <img src="img/nust_0.png" alt=""><img src="img/nust_1.png" alt=""><img src="img/nust_2.png" alt=""><img src="img/nust_3.png" alt="">
   </div>
   <div class="nust-pastabos">
-    <div><b>Cloud · My account</b><p>Where the numbers come from. Sign in here, or from the phone app</p></div>
-    <div><b>Connection</b><p>Auto, home Wi-Fi only, or cloud only. Without the cloud, Find units searches your network</p></div>
-    <div><b>Data refresh</b><p>How often in the background</p></div>
+    <div><b>Cloud · My account</b><p>Sign in here or from the phone app. Under the button: the account, and a warning if Vallox rejects it</p></div>
+    <div><b>Unit · Connection</b><p>Which unit, and the path: Auto, home Wi-Fi only or cloud only. Without the cloud, Find units searches your network</p></div>
+    <div><b>Data refresh</b><p>Auto (default): every 20-60 min, every 15 after a change. Or fixed, or only in the app</p></div>
     <div><b>Unit clock</b><p>The unit keeps its own time. Ask to fix, fix automatically, or don't check</p></div>
     <div><b>Alerts</b><p>Notifications for temperature, humidity, CO2 and filters</p></div>
-    <div><b>Pages</b><p>Show or hide each page</p></div>
-    <div><b>Pro · How it works</b><p>Trial and unlock; short help on every feature</p></div>
-    <div><b>Language</b><p>English, Suomi, Lietuvių, Polski</p></div>
+    <div><b>Pages</b><p>Show or hide each page. Ventilation and Settings always stay</p></div>
+    <div><b>How it works · Language</b><p>Short help on every feature. English, Suomi, Lietuvių, Polski</p></div>
+    <div><b>Send test alerts</b><p>Five sample notifications, to see how they look on your watch</p></div>
   </div>
   <div class="kontaktai">
     <div><b>Questions, feedback, a photo of something wrong</b>
@@ -675,7 +685,9 @@ table.modes { width: 100%; border-collapse: collapse; font-size: 9.3pt; }
   <p class="pr-pastaba">One notice when a value leaves its range, no repeats; it disappears when the value is back.
   The scale is the same as in the app, so you see how far out you are. Filters get a notice when a change is due.
   Temperature, humidity, CO2 and filter notices can be turned off in Settings → Alerts. The clock notice cannot:
-  a wrong unit clock spoils the history that Optimize and Statistics rely on. Choose Don't check to silence it.</p>
+  a wrong unit clock spoils the history that Optimize and Statistics rely on. Choose Don't check to silence it.
+  A notice that suggests a mode - high CO2 or humidity, or "Shower?" with Tap to Boost - opens the Ventilation page,
+  so you see the mode change.</p>
 
 </section>
 </body></html>
