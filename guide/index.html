@@ -448,15 +448,16 @@ table.modes { width: 100%; border-collapse: collapse; font-size: 9.3pt; }
   <div class="kicker">Optimized · how often, and what never changes</div>
   <h2>The watch looks when something happens.</h2>
   <table class="modes">
-    <tr><th>Data refresh: Auto (default)</th><th>Reading</th></tr>
+    <tr><th>Data refresh: Auto</th><th>Reading</th></tr>
     <tr><td>Hours when your home is usually busy</td><td>every 20 min</td></tr>
     <tr><td>Ordinary hours</td><td>every 30 min</td></tr>
     <tr><td>Night, 1-5 h</td><td>every 60 min</td></tr>
     <tr><td>A change was just seen (humidity +3&nbsp;% or CO2 +100&nbsp;ppm since the last reading)</td><td>every 15 min for an hour</td></tr>
   </table>
   <p class="intro" style="margin-top:4mm">The busy hours are learned for each unit from its own history (when Optimize or Statistics
-  downloads it) and from the changes the watch sees. Until there is enough data: 6-8 and 19-22 h. A fixed 20 min,
-  30 min or 1 h, or Only in app can be chosen in Settings → Data refresh. With Only in app nothing runs in the
+  downloads it) and from the changes the watch sees. Until there is enough data: 6-8 and 19-22 h. The default is a
+  fixed 1 h; Auto, 20 min, 30 min or Only in app can be chosen in Settings → Data refresh. Auto drains the
+  battery faster. With Only in app nothing runs in the
   background: no notifications and no automation. At night Android may group the readings.</p>
   <div class="split">
     <div>
@@ -648,7 +649,7 @@ table.modes { width: 100%; border-collapse: collapse; font-size: 9.3pt; }
   <div class="nust-pastabos">
     <div><b>Cloud · My account</b><p>Sign in here or from the phone app. Under the button: the account, and a warning if Vallox rejects it</p></div>
     <div><b>Unit · Connection</b><p>Which unit, and the path: Auto, home Wi-Fi only or cloud only. Without the cloud, Find units searches your network</p></div>
-    <div><b>Data refresh</b><p>Auto (default): every 20-60 min, every 15 after a change. Or fixed, or only in the app</p></div>
+    <div><b>Data refresh</b><p>1 h (default), 20 or 30 min, only in the app, or Auto: every 20-60 min, every 15 after a change</p></div>
     <div><b>Unit clock</b><p>The unit keeps its own time. Ask to fix, fix automatically, or don't check</p></div>
     <div><b>Alerts</b><p>Notifications for temperature, humidity, CO2 and filters</p></div>
     <div><b>Pages</b><p>Show or hide each page. Ventilation and Settings always stay</p></div>
