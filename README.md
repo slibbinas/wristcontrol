@@ -1,6 +1,6 @@
 # Wrist Control for Vallox
 
-Public pages for the Wear OS app: product page and privacy policy.
-https://slibbinas.github.io/wristcontrol/
+The pages moved to https://tinyowllabs.com/wristcontrol/ - this repository only keeps
+redirects for the old addresses, plus the privacy policy, which Google Play points here.
 
 Source: the private ValloxWatch repository (`site/`).
